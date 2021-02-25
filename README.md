@@ -31,7 +31,8 @@
 - 默认文件存放目录：/tmp/uid_conf
   - 文件my_id：存放本地机器ID编码值
   - 文件reboot_num：存放启动次数
-注意：shared缓存在nginx reload命令执行时，不会清空，因此不建议使用reload命令启动
+
+**注意：** shared缓存在nginx reload命令执行时，不会清空，因此不建议使用reload命令启动
 
 ### 2. 在init_work_by_lua_block阶段
 初始化work，引用openresty.uid.luwan.generator_id_strategy.lua#idfile_reboot_strategy(my_id,reboot_num, worker_id)
