@@ -1,2 +1,2 @@
-# openresty-api-gateway
-API traffic gateway based on openresty.
+# openresty-uuid
+Openresty based distributed ID.
