@@ -14,8 +14,8 @@
 - 符号位1-bit，不用
 - delta时间戳30-bit，存储秒级可以支持34年，默认以2021-01-01 00:00:00为epoch基点
 - 生产者ID由机器ID、work ID、重启次数组成
-  - 机器ID 7-bit可支持128个服务，通过本地文件配置（也可通过环境变量设置，或者使用其他在线服务如MySQL设置）
-  - work ID 6-bit可支持64个线程，对应OpenResty的work.id，为了简化序列号递增问题，直接每个work独立一个UID生成器
+  - 机器ID 7-bit可支持128个服务，通过本地文件配置
+  - work ID 6-bit可支持64个线程，对应OpenResty的work.id，每个work独立一个UID生成器简化序列号递增
   - reboot_num 4-bit可尽量避免时钟回拨冲突
 - 序列号 11-bit
 
@@ -27,14 +27,14 @@
 ## 使用方式
 
 ### 1. 在init_by_lua_block阶段
-获取机器ID，openresty.uid.luwan.machine_id_share.lua#machine_id()
+获取并缓存本机编码ID，引用openresty.uid.luwan.machine_id_share.lua#machine_id()
 - 默认文件存放目录：/tmp/uid_conf
   - 文件my_id：存放本地机器ID编码值
   - 文件reboot_num：存放启动次数
 注意：shared缓存在nginx reload命令执行时，不会清空，因此不建议使用reload命令启动
 
 ### 2. 在init_work_by_lua_block阶段
-openresty.uid.luwan.generator_id_strategy.lua#idfile_reboot_strategy(my_id,reboot_num, worker_id)
+初始化work，引用openresty.uid.luwan.generator_id_strategy.lua#idfile_reboot_strategy(my_id,reboot_num, worker_id)
 
 ### 3. 在content_by_lua_block阶段
-获取uid，openresty.uid.luwan.uid_allocator.lua#next_uid()
+获取uid，引用openresty.uid.luwan.uid_allocator.lua#next_uid()
