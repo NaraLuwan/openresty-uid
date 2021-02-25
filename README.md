@@ -6,18 +6,18 @@
 
 ## 设计要点
 
-组成：| 符号位 | delta时间戳 |生产者ID(机器ID | work.ID|reboot_num) | 序列号 |，默认位数如下：
+组成：| 符号位 | delta时间戳 | 生产者ID(机器ID|work ID|重启次数) | 序列号 |，默认配置如下：
 ```text
 | sign  | delta seconds | gen id | sequcne |
 | 1-bit |    30-bit     | 22-bit |  11-bit |
 ```
 - 符号位1-bit，不用
-- delta时间戳30-bit，存储秒级可以支持34年，默认以2021-01-01 00:00:00为epoch基点
+- delta时间戳：30-bit，存储秒级可以支持34年，默认以2021-01-01 00:00:00为epoch基点
 - 生产者ID由机器ID、work ID、重启次数组成
-  - 机器ID 7-bit可支持128个服务，通过本地文件配置
-  - work ID 6-bit可支持64个线程，对应OpenResty的work.id，每个work独立一个UID生成器简化序列号递增
-  - reboot_num 4-bit可尽量避免时钟回拨冲突
-- 序列号 11-bit
+  - 机器ID：7-bit可支持128个服务，通过本地文件配置
+  - work ID：6-bit可支持64个线程，对应OpenResty的work.id，每个work独立一个UID生成器简化序列号递增
+  - 重启次数：4-bit可尽量避免时钟回拨冲突
+- 序列号：11-bit
 
 ## 吞吐量
 
