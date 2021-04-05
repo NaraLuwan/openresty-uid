@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3252a991-f32f-494e-ab90-5da02a0feca3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uid/generator_id_strategy.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uid/machine_id.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uid/uid_allocator.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/base_util.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ip_hostname_util.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/local_ip_resolver.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +49,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="jdk.selected.LUA_MODULE" value="LuaJ" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\GitHub\openresty-uid\src\utils" />
+      <recent name="E:\GitHub\openresty-uid\src" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,5 +81,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
