@@ -35,7 +35,7 @@
 **注意：** shared缓存在nginx reload命令执行时，不会清空，因此不建议使用reload命令启动
 
 ### 2. 在init_work_by_lua_block阶段
-初始化work，引用uid.generator_id_strategy.lua#idfile_reboot_strategy(my_id,reboot_num, worker_id)
+初始化work，引用openresty.uid.luwan.generator_id_strategy.lua#idfile_reboot_strategy(my_id,reboot_num, worker_id)
 
 ### 3. 在content_by_lua_block阶段
-获取uid，引用uid.uid_allocator.lua#next_uid()
+获取uid，引用openresty.uid.luwan.uid_allocator.lua#next_uid()
