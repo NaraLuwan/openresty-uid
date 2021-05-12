@@ -1,4 +1,4 @@
-# openresty-uid
+# 项目简介
 
 - 基于Snowflake算法思想，64bit
 - 关联时间递增，同时支持时钟回拨可用
@@ -19,7 +19,7 @@
   - 重启次数：4-bit可尽量避免时钟回拨冲突
 - 序列号：11-bit
 
-## 吞吐量
+### 吞吐量
 
 - 每秒支持：workId * 序列号 = 17-bit，即每秒最大可生成131072个
 - 每秒超过最大数量时借用未来时间
@@ -39,3 +39,19 @@
 
 ### 3. 在content_by_lua_block阶段
 获取uid，引用uid.uid_allocator.lua#next_uid()
+
+
+## 项目结构
+```text
+openresty-uid
+└─src
+    ├─uid
+    │      generator_id_strategy.lua
+    │      machine_id.lua
+    │      uid_allocator.lua
+    │
+    └─utils
+            base_util.lua
+            ip_hostname_util.lua
+            local_ip_resolver.lua
+```
