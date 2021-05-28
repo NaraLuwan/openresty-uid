@@ -1,4 +1,4 @@
--- Author: NaraLuwan
+-- Author: L
 -- Date: 2021-02-18
 -- Using: 获取IPv4和hostname
 

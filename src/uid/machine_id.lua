@@ -1,4 +1,4 @@
--- Author: NaraLuwan
+-- Author: L
 -- Date: 2021-02-18
 -- Using: 获取机器ID值，为16-bit数值
 
@@ -12,7 +12,6 @@ local ip_util = require("utils.ip_hostname_util")
 local base_util = require("utils.base_util")
 
 local _M = { version = 0.1 }
-
 
 
 -- 获取本机机器ID，16-bit
