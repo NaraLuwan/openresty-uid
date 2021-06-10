@@ -34,7 +34,7 @@
 
 **注意：** shared缓存在nginx reload命令执行时，不会清空，因此不建议使用reload命令启动
 
-### 在content_by_lua*阶段
+## 在content_by_lua*阶段
 获取uid，引用uid.core.allocator.lua#next_uid()，参考：[test_uid.conf](https://github.com/NaraLuwan/openresty-uid/blob/master/server_hub/test_uid.conf)
 
 
