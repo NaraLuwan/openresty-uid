@@ -1,5 +1,6 @@
--- 解析本地/etc/hosts: ip和hosts
+-- Author: L
 -- Date: 2021-02-18
+-- 解析本地/etc/hosts: ip和hosts
 -- 来自:https://github.com/ysugimoto/lua-local-resolver/blob/master/local-resolver.lua
 
 require("string")

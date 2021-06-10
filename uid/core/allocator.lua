@@ -1,6 +1,6 @@
 -- Author: L
 -- Date: 2021-02-18
--- Using: UID生成器
+-- UID生成器
 --        默认情况下：
 --        | sign | delta seconds | gen id | sequcne |
 --        | 1-bit | 30-bit | 22-bit | se11-bit |

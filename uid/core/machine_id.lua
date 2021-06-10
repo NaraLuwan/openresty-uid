@@ -1,6 +1,6 @@
 -- Author: L
 -- Date: 2021-02-18
--- Using: 获取机器ID值，为16-bit数值
+-- 获取机器ID值，为16-bit数值
 
 local require = require
 local ngx = ngx

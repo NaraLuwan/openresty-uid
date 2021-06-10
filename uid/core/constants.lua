@@ -1,4 +1,5 @@
--- @author L
+-- Author: L
+-- Date: 2021-02-18
 
 local _M = { VERSION = 0.1 }
 

@@ -1,6 +1,6 @@
 -- Author: L
 -- Date: 2021-02-18
--- Using: 节点ID分配策略
+-- 节点ID分配策略
 
 local require = require
 local tonumber = tonumber

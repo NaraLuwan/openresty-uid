@@ -1,5 +1,6 @@
+-- Author: L
+-- Date: 2021-02-18
 -- 每个worker初始化
--- @author: L
 
 local require = require
 local ngx = ngx
@@ -36,8 +37,8 @@ end
 
 local function init_allocator()
     local machine_id_cache = ngx.shared.machine_id_cache
-    local my_id = machine_id_cache:get(constants.CACHE_RISK_MY_ID_K)
-    local reboot_num = machine_id_cache:get(constants.CACHE_RISK_REBOOT_NUM_K)
+    local my_id = machine_id_cache:get(constants.CACHE_MY_ID_K)
+    local reboot_num = machine_id_cache:get(constants.CACHE_REBOOT_NUM_K)
     local worker_id = ngx.worker.id()
 
     local gen_strategy = require("uid.core.generator_strategy")
