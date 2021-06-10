@@ -86,7 +86,7 @@ function _M.init(conf)
     return true
 end
 
-function _M.next_uuid()
+function _M.next_uid()
     local current_second = ngx.time()
     -- 调整判断：时间戳，sequence初始值
     if last_second < current_second then
