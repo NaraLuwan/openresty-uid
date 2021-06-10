@@ -27,7 +27,7 @@
 ## 使用方式
 
 ### 1. 在init_by_lua_block阶段
-获取并缓存本机编码ID，引用openresty.uid.luwan.machine_id_share.lua#machine_id()
+获取并缓存本机编码ID，引用openresty.uid_init.lua#init()
 - 默认文件存放目录：/tmp/uid_conf
   - 文件my_id：存放本地机器ID编码值
   - 文件reboot_num：存放启动次数
