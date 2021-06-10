@@ -26,32 +26,19 @@
 
 ## 使用方式
 
-### 1. 在init_by_lua_block阶段
-获取并缓存本机编码ID，引用openresty.uid_init.lua#init()
+### 1. 在init_by_lua*阶段
+获取并缓存本机编码ID，引用openresty.uid_init.lua#init()方法，参考：[nginx.conf](https://github.com/NaraLuwan/openresty-uid/blob/master/nginx.conf)
 - 默认文件存放目录：/tmp/uid_conf
   - 文件my_id：存放本地机器ID编码值
   - 文件reboot_num：存放启动次数
 
 **注意：** shared缓存在nginx reload命令执行时，不会清空，因此不建议使用reload命令启动
 
-### 2. 在init_work_by_lua_block阶段
-初始化work，引用uid.generator_id_strategy.lua#idfile_reboot_strategy(my_id,reboot_num, worker_id)
-
-### 3. 在content_by_lua_block阶段
-获取uid，引用uid.uid_allocator.lua#next_uid()
+### 2. 在content_by_lua*阶段
+获取uid，引用uid.core.allocator.lua#next_uid()，参考：[test_uid.conf](https://github.com/NaraLuwan/openresty-uid/blob/master/nginx.conf)
 
 
 ## 项目结构
 ```text
-openresty-uid
-└─src
-    ├─uid
-    │      generator_id_strategy.lua
-    │      machine_id.lua
-    │      uid_allocator.lua
-    │
-    └─utils
-            base_util.lua
-            ip_hostname_util.lua
-            local_ip_resolver.lua
+
 ```
