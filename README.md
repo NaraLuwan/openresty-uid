@@ -1,10 +1,10 @@
-# 1. 项目简介
+# 项目简介
 
 - 基于Snowflake算法思想，64bit
 - 关联时间递增，同时支持时钟回拨可用
 
 
-## 1.1 设计要点
+## 设计要点
 
 组成：| 符号位 | delta时间戳 | 生产者ID(机器ID|work ID|重启次数) | 序列号 |，默认配置如下：
 ```text
@@ -19,14 +19,14 @@
   - 重启次数：4-bit可尽量避免时钟回拨冲突
 - 序列号：11-bit
 
-## 1.2 吞吐量
+## 吞吐量
 
 - 每秒支持：workId * 序列号 = 17-bit，即每秒最大可生成131072个
 - 每秒超过最大数量时借用未来时间
 
-# 2. 使用方式
+# 使用方式
 
-## 2.1 在init_by_lua*阶段
+## 在init_by_lua*阶段
 获取并缓存本机编码ID，引用openresty.uid_init.lua#init()方法，参考：[nginx.conf](https://github.com/NaraLuwan/openresty-uid/blob/master/nginx.conf)
 - 默认文件存放目录：/tmp/uid_conf
   - 文件my_id：存放本地机器ID编码值
@@ -34,11 +34,11 @@
 
 **注意：** shared缓存在nginx reload命令执行时，不会清空，因此不建议使用reload命令启动
 
-### 2.2 在content_by_lua*阶段
+### 在content_by_lua*阶段
 获取uid，引用uid.core.allocator.lua#next_uid()，参考：[test_uid.conf](https://github.com/NaraLuwan/openresty-uid/blob/master/server_hub/test_uid.conf)
 
 
-# 3. 项目结构
+# 项目结构
 ```text
 ├─server_hub
 │      test_uid.conf
